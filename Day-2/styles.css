@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+:root {
+  --line-fill: #3498db;
+  --line-empty: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 20px;
+  max-width: 100%;
+  width: 350px;
+}
+
+.progress-container::before {
+  content: "";
+  position: absolute;
+  height: 5px;
+  background-color: var(--line-empty);
+  width: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in;
+  z-index: -1;
+}
+
+.progress {
+  position: absolute;
+  height: 5px;
+  background-color: var(--line-fill);
+  width: 0%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-in;
+  z-index: -1;
+}
+
+.circle {
+  border-radius: 50%;
+  border: 2px solid var(--line-empty);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border: 2px solid var(--line-fill);
+}
+
+button {
+  background-color: var(--line-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px 30px;
+  margin: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:disabled {
+  background-color: var(--line-empty);
+  cursor: not-allowed;
+}
