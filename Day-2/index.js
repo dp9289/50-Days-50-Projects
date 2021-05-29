@@ -5,26 +5,26 @@ const progress = document.querySelector(".progress");
 
 let currActive = 1;
 
-next.addEventListener("click", () =>{
+next.addEventListener("click", () => {
     currActive++;
-    if(currActive > circles.length) {
+    if (currActive > circles.length) {
         currActive = circles.length;
     }
     update();
 })
 
-prev.addEventListener("click", () =>{
+prev.addEventListener("click", () => {
     currActive--;
-    if(currActive < 1) {
+    if (currActive < 1) {
         currActive = 1;
     }
     update();
 })
 
 function update() {
-    if(currActive === 1 ) {
+    if (currActive === 1) {
         prev.disabled = true;
-    } else if(currActive === circles.length) {
+    } else if (currActive === circles.length) {
         next.disabled = true;
     } else {
         prev.disabled = false;
@@ -32,7 +32,7 @@ function update() {
     }
 
     circles.forEach((circle, i) => {
-        if(i < currActive) {
+        if (i < currActive) {
             circle.classList.add('active');
         } else {
             circle.classList.remove('active');
@@ -41,5 +41,5 @@ function update() {
 
     let actives = document.querySelectorAll('.active');
 
-    progress.style.width = ((actives.length-1)/ (circles.length-1)) * 100 + '%';
+    progress.style.width = ((actives.length - 1) / (circles.length - 1)) * 100 + '%';
 }
