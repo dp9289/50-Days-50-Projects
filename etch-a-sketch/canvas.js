@@ -43,6 +43,17 @@ function draw({ key }) {
   ctx.lineTo(x, y);
   ctx.stroke();
 }
+function clearCanvas() {
+  canvas.classList.add("shake");
+  ctx.clearRect(0, 0, width, height);
+  canvas.addEventListener(
+    "animationend",
+    function () {
+      canvas.classList.remove("shake");
+    },
+    { once: true } //listen for event only once
+  );
+}
 
 function handleKey(e) {
   if (e.key.includes("Arrow")) {
@@ -52,3 +63,4 @@ function handleKey(e) {
 }
 
 window.addEventListener("keydown", handleKey);
+btn.addEventListener("click", clearCanvas);
