@@ -13,15 +13,36 @@ ctx.strokeStyle = "#fff";
 const { width, height } = canvas;
 
 //generating random x and y coordinate for drawing
-const x = Math.floor(Math.random() * width);
-const y = Math.floor(Math.random() * height);
+let x = Math.floor(Math.random() * width);
+let y = Math.floor(Math.random() * height);
 
 ctx.beginPath(); //begin drawing
 ctx.moveTo(x, y); //move to this position in the canvas
 ctx.lineTo(x, y); //create a line at this position in the canvas
 ctx.stroke(); //this actually draws the line at given position in the canvas
 
-function draw({ key }) {}
+function draw({ key }) {
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  switch (key) {
+    case "ArrowUp":
+      y -= 10;
+      break;
+    case "ArrowDown":
+      y += 10;
+      break;
+    case "ArrowLeft":
+      x -= 10;
+      break;
+    case "ArrowRight":
+      x += 10;
+      break;
+    default:
+      break;
+  }
+  ctx.lineTo(x, y);
+  ctx.stroke();
+}
 
 function handleKey(e) {
   if (e.key.includes("Arrow")) {
