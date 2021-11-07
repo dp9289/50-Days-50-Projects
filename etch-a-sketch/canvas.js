@@ -1,7 +1,7 @@
 //select canvas and shake button
 const canvas = document.getElementById("etch-a-sketch");
+const btn = document.getElementById("btn");
 const ctx = canvas.getContext("2d");
-const btn = document.getElementById("shake");
 
 //setup canvas
 ctx.lineJoin = "round";
