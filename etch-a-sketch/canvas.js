@@ -20,3 +20,14 @@ ctx.beginPath(); //begin drawing
 ctx.moveTo(x, y); //move to this position in the canvas
 ctx.lineTo(x, y); //create a line at this position in the canvas
 ctx.stroke(); //this actually draws the line at given position in the canvas
+
+function draw({ key }) {}
+
+function handleKey(e) {
+  if (e.key.includes("Arrow")) {
+    e.preventDefault();
+    draw({ key: e.key });
+  }
+}
+
+window.addEventListener("keydown", handleKey);
