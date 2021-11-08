@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="tabs">
+        <div class="tablist" aria-labelledby="Programming Languages">
+          <button role="tab" aria-selected="true" id="js">JavaScript</button>
+          <button role="tab" aria-selected="false" id="java">Java</button>
+          <button role="tab" aria-selected="false" id="python">Python</button>
+        </div>
+        <div role="tabpanel" aria-labelledby="js">
+          <p>I am JavaScript</p>
+        </div>
+        <div role="tabpanel" aria-labelledby="java" hidden>
+          <p>I am Java</p>
+        </div>
+        <div role="tabpanel" aria-labelledby="python" hidden>
+          <p>I am Python</p>
+        </div>
+      </div>
+    </div>
+    <script src="tabs.js"></script>
+  </body>
+</html>
