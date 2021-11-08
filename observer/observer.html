@@ -1,0 +1,97 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        height: 100vh;
+        background-color: rgba(233, 160, 25, 0.952);
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+      .wrapper {
+        background-color: #fff;
+        width: 400px;
+        height: 80vh;
+        border: 3px solid black;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        border-radius: 10px;
+      }
+      .terms-and-conditions {
+        overflow-y: scroll;
+        padding: 1rem;
+        letter-spacing: 1px;
+        position: relative;
+      }
+      p {
+        font-family: "Roboto";
+      }
+      button {
+        padding: 1rem;
+        margin: 10px;
+        background-color: #f53a49;
+        outline: none;
+        border: 3px solid black;
+        color: white;
+        cursor: pointer;
+      }
+      button[disabled] {
+        cursor: not-allowed;
+        opacity: 0.4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="terms-and-conditions">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit commodi
+          aut tempora atque voluptatem et itaque. Expedita a quo cum maxime
+          placeat iure nihil, error corrupti rerum quisquam repudiandae corporis
+          suscipit repellendus possimus. Esse neque sunt in. Obcaecati, laborum
+          ex. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem natus
+          ducimus repellendus ullam voluptatum. Tenetur ab delectus doloremque
+          quibusdam accusantium,
+        </p>
+        <p>
+          Exercitationem corrupti praesentium aliquam fuga autem, obcaecati
+          alias dolor explicabo, in suscipit omnis voluptatem officiis itaque?
+          Quam unde doloremque cupiditate exercitationem natus, pariatur,
+          quisquam labore excepturi eligendi ratione rerum consequatur
+          aspernatur numquam iste aperiam eos officiis praesentium nam
+          reprehenderit qui. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Rem natus ducimus repellendus ullam voluptatum. Tenetur ab
+          delectus doloremque quibusdam accusantium, provident
+        </p>
+        <p>
+          Necessitatibus et quam velit ad enim, architecto omnis. Dicta corrupti
+          itaque amet, sequi blanditiis autem incidunt deleniti dignissimos non
+          optio. Eveniet officiis vel aspernatur nostrum pariatur eligendi sed
+          quae aliquam asperiores natus nesciunt a molestiae amet alias,
+          maiores, facere quam! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Rem natus ducimus repellendus ullam voluptatum.
+          Tenetur ab delectus doloremque quibusdam accusantium,
+        </p>
+        <p>
+          Autem, culpa cum illum dignissimos voluptatum suscipit laborum, qui
+          ipsum reiciendis quia, nesciunt aperiam perspiciatis consectetur
+          doloribus fuga facilis! Suscipit harum minima velit, quisquam
+          aspernatur consequatur neque quasi tempore illo iste iure nihil
+          consectetur recusandae architecto, voluptate soluta? Sequi, obcaecati.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem natus
+          ducimus repellendus ullam voluptatum. Tenetur ab delectus doloremque
+          quibusdam accusantium, provident in inventore
+        </p>
+      </div>
+      <button class="accept" disabled>Accept</button>
+    </div>
+    <script src="observer.js"></script>
+  </body>
+</html>
