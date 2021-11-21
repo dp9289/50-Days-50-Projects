@@ -19,10 +19,16 @@ function funky(letter) {
     return letter;
 }
 
-function unable() {}
+function unable(letter) {
+    const randomNum = Math.floor(Math.random()*3);
+    if(letter === ' ' && randomNum === 2){
+        return '...';
+    }
+    return letter;
+}
 function transformText(text) {
   const checkedInput = filterInputs.find((inputChecked) => inputChecked.checked).value;
-  const result = Array.from(text).map(checkedInput);
+  const result = Array.from(text).map(unable);
   output.textContent = result.join("");
 }
 
