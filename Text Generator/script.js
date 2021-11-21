@@ -35,3 +35,7 @@ function transformText(text) {
 }
 
 text.addEventListener("input", e => transformText(e.target.value));
+
+filterInputs.forEach(filter => {
+    filter.addEventListener("input", () => transformText(text.value))
+});
