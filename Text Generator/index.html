@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Generator</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        height: 100vh;
+        background-color: #161832;
+        color: aqua;
+        font-family: Roboto, sans-serif;
+        display: grid;
+        place-content: center;
+        font-size: 1.2rem;
+      }
+      .container {
+        border: 2px solid aqua;
+        padding: 1rem 2rem;
+        width: 30vw;
+        box-shadow: 5px 5px 10px #161618, 10px 10px 10px #161618;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      textarea {
+        background-color: #161832;
+        color: aqua;
+        font-size: inherit;
+        font-family: inherit;
+        padding: 1rem;
+        border: 2px solid white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <label for="sarcastic">
+        <input
+          type="radio"
+          value="sarcastic"
+          id="sarcastic"
+          name="filter"
+          checked
+        />
+        Sarcastic
+      </label>
+      <label for="funky">
+        <input type="radio" value="funky" id="funky" name="filter" />
+        Funky
+      </label>
+      <label for="unable">
+        <input type="radio" value="unable" id="unable" name="filter" />
+        Unable to Structure a Sentence
+      </label>
+      <textarea name="text" id="text" cols="30" rows="3">
+Here is some random text</textarea
+      >
+      <p id="output">I am output</p>
+    </div>
+  </body>
+</html>
