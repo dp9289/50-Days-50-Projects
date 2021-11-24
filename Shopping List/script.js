@@ -23,9 +23,9 @@ function displayItem() {
   const html = items
     .map(
       (item) =>
-        `<li>
+        `<li style="margin-top: 7px;">
       <span>${item.name}</span>
-      <button>&times;</button>
+      <button value="${item.id}">&times;</button>
     </li>`
     )
     .join("");
@@ -41,5 +41,15 @@ function getItemsToLocalStorage() {
   if (listItems.length) items = listItems;
   displayItem();
 }
+
+function deleteItem(e) {
+  if (e.target.matches("button")) {
+    items = items.filter((item) => item.id !== parseInt(e.target.value));
+    // console.log(e.target.value, items[0].id);
+    displayItem();
+    addItemsToLocalStorage();
+  }
+}
 form.addEventListener("submit", handleSubmit);
+list.addEventListener("click", deleteItem);
 getItemsToLocalStorage();
