@@ -1,7 +1,7 @@
 const form = document.querySelector("#form");
 const list = document.querySelector(".list");
 
-const items = [];
+let items = [];
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -15,6 +15,7 @@ function handleSubmit(e) {
   items.push(item);
   //   e.currentTarget.item.value = '';
   displayItem();
+  addItemsToLocalStorage();
   e.target.reset();
 }
 
@@ -30,4 +31,15 @@ function displayItem() {
     .join("");
   list.innerHTML = html;
 }
+
+function addItemsToLocalStorage() {
+  localStorage.setItem("items", JSON.stringify(items));
+}
+
+function getItemsToLocalStorage() {
+  const listItems = JSON.parse(localStorage.getItem("items"));
+  if (listItems.length) items = listItems;
+  displayItem();
+}
 form.addEventListener("submit", handleSubmit);
+getItemsToLocalStorage();
