@@ -24,6 +24,10 @@ function displayItem() {
     .map(
       (item) =>
         `<li style="margin-top: 7px;">
+      <input
+      value=${item.id}
+      type="checkbox"
+      ${item.complete ? "checked" : ""}>
       <span>${item.name}</span>
       <button value="${item.id}">&times;</button>
     </li>`
@@ -42,14 +46,27 @@ function getItemsToLocalStorage() {
   displayItem();
 }
 
-function deleteItem(e) {
-  if (e.target.matches("button")) {
-    items = items.filter((item) => item.id !== parseInt(e.target.value));
-    // console.log(e.target.value, items[0].id);
-    displayItem();
-    addItemsToLocalStorage();
-  }
+function deleteItem(id) {
+  items = items.filter((item) => item.id !== id);
+  // console.log(e.target.value, items[0].id);
+  displayItem();
+  addItemsToLocalStorage();
+}
+
+function markAsComplete(id) {
+  const itemRef = items.find((item) => item.id === id);
+  itemRef.complete = !itemRef.complete;
+  displayItem();
+  addItemsToLocalStorage();
 }
 form.addEventListener("submit", handleSubmit);
-list.addEventListener("click", deleteItem);
+list.addEventListener("click", (e) => {
+  const id = parseInt(e.target.value);
+  if (e.target.matches("button")) {
+    deleteItem(id);
+  }
+  if (e.target.matches("input[type='checkbox']")) {
+    markAsComplete(id);
+  }
+});
 getItemsToLocalStorage();
