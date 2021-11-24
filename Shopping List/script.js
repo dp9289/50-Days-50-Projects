@@ -6,6 +6,7 @@ const items = [];
 function handleSubmit(e) {
   e.preventDefault();
   const name = e.currentTarget.item.value;
+  if (!name) return;
   const item = {
     name: name,
     id: Date.now(),
