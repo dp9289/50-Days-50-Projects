@@ -35,7 +35,7 @@ kbd{
   text-align: center;
   background-color: rgba(32, 0, 73, .7);
   border-radius: 5px;
-  transition: all .7s;
+  transition: all .1s ease;
 }
 .sound {
     color:rgb(190, 143, 250);
