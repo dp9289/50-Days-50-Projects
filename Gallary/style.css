@@ -1,9 +1,10 @@
-body{
-    margin: 0;
+body {
+  /* margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #161621;
-    /* overflow: hidden; */
+    box-sizing: border-box; */
+  font-size: 20px;
+  line-height: 1.5;
+  background-color: #161621;
 }
 .galleries {
   padding: 2rem;
@@ -51,7 +52,8 @@ body{
   transform: translateY(-100vh);
   transition: all 0.5s;
   max-width: 1000px;
-  height: calc(100vh - 100px);
+  /* height: calc(100vh - 100px); */
+  height: auto;
   display: grid;
   grid-template-columns: 50px 1fr 50px;
   color: black;
@@ -86,4 +88,8 @@ body{
 
 .modal.open .modalInner {
   transform: translateY(0);
+}
+
+button {
+  background-color: slateblue;
 }
